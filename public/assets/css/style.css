@@ -1,0 +1,62 @@
+body {
+    background-image: url("/assets/images/dust_scratches.png");
+}
+
+nav {
+    background: #2c98f0;
+    margin: -8px -8px -8px -8px;
+    font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+    padding: 15px;
+}
+
+#savednav {
+    padding: 18px;
+}
+
+.nav-mongo-title {
+    color: snow;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.nav-saved-title {
+    color: snow;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.a-tag-links {
+    font-size: 15px;
+    margin-left: 20px;
+    color: snow;
+    text-decoration: none;
+}
+
+.a-tag-links:visited{
+    color: ;
+
+}
+
+.a-tag-links:hover {
+    color: yellow;
+    opacity: .7;
+    /*background: #a7bba8;*/
+}
+
+.active {
+    /*opacity: .5;*/
+}
+
+#scrapeButton {
+    background: #bb211f;
+    margin-left: 20px;
+    padding: 10px;
+    color: #ffffff;
+    border: none;
+    font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 15px;
+    float: center;
+}
+
+
+
