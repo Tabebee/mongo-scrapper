@@ -7,8 +7,8 @@ const NoteScehma = new Schema({
     body: String
 });
 
-const Note = mongoose.modal("Notes", NoteScehma);
+const Notes = mongoose.model("Notes", NoteScehma);
 
-module.exports = Note;
+module.exports = Notes;
 
 

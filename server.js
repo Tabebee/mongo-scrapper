@@ -37,7 +37,7 @@ app.set('views', './views');
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/mongoScrapper", {
+mongoose.connect("mongodb://localhost/mongoscrapper", {
     useMongoClient: true
 });
 
