@@ -1,21 +1,22 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const logger = require("morgan");
-const mongoose = require("mongoose");
+var express = require("express");
+var bodyParser = require("body-parser");
+var logger = require("morgan");
+var mongoose = require("mongoose");
 //Set handlebars
-const expHbs = require('express-handlebars');
+var expHbs = require('express-handlebars');
+var db = require("./models");
 
 // scraping tools
-const request = require("request");
-const cheerio = require("cheerio");
+var request = require("request");
+var cheerio = require("cheerio");
 
 // Require all models
 // const db = require("./models");
 
-const PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 // Initialize Express
-const app = express();
+var app = express();
 
 // Configure middleware
 
@@ -32,14 +33,21 @@ app.use(express.static("public"));
 //  Handlebars Initialize
 app.engine('handlebars', expHbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
-app.set('views', './views');
+// app.set('views', './views');
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
+let MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoscrapper";
+
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/mongoscrapper", {
+mongoose.connect(MONGODB_URI, {
     useMongoClient: true
 });
+
+// mongoose.Promise = Promise;
+// mongoose.connect("mongodb://localhost/mongoscrapper", {
+//     useMongoClient: true
+// });
 
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);

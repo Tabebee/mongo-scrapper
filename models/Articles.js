@@ -15,10 +15,10 @@ const ArticleSchema = new Schema({
         type: Boolean,
         default: false
     },
-    note: {
+    note: [{
         type: Schema.Types.ObjectId,
         ref: "Notes"
-    },
+    }],
     sum: {
         type: String,
         required: false,
