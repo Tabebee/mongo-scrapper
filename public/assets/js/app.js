@@ -51,7 +51,7 @@ $("#scrapeButton").on("click", function () {
     }).then( function (json) {
         console.log("scraped");
         // console.log(json);
-        // window.location("/");
+        window.location = "/";
     });
 });
 
@@ -65,7 +65,7 @@ $(document).on("click", ".saveButton" ,function () {
     }).done(function (data) {
         // console.log(data);
         // window.location("/");
-        window.location("/saved");
+        window.location = "/saved";
 
         // setTimeout(function () {
         //     window.location("/");
@@ -83,7 +83,7 @@ $(document).on("click", ".deleteButton" ,function () {
     }).done(function (data) {
         // console.log(data);
         // window.location("/");
-        window.location("/saved");
+        window.location = "/saved";
 
         // setTimeout(function () {
         //     window.location("/");
