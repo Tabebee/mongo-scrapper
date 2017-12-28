@@ -1,6 +1,6 @@
 // scraping tools
-var axios = require("axios");
-var cheerio = require("cheerio");
+const axios = require("axios");
+const cheerio = require("cheerio");
 //  Models
 let db = require("../models");
 //  Why cant I do db = require("../models")
@@ -11,7 +11,7 @@ module.exports = function (app) {
     app.get("/scrape", function (req, res) {
         axios.get("https://www.nytimes.com/").then(function (response) {
             // console.log(response);
-                var $ = cheerio.load(response.data);
+                let $ = cheerio.load(response.data);
                 console.log("this");
             $(".story").each( function (i, element) {
                     console.log("this after each");
@@ -70,7 +70,7 @@ module.exports = function (app) {
     });
     //  delete article route
     app.post("/articles/delete/:id", function (req, res) {
-        db.Articles.findOneAndUpdate({ "_id": req.params.id}, {"savedboolean": false, "note": []})
+        db.Articles.findOneAndUpdate({ "_id": req.params.id}, { "savedboolean": false, "note": [] })
             .then( function (dbb) {
                 res.send(dbb);
             }).catch( function (err) {
@@ -80,7 +80,7 @@ module.exports = function (app) {
     //  Add a note route
     app.post("/newnote/:id", function (req, res) {
         console.log(req.body);
-        db.Note.insert({"_id": req.body})
+        db.Note.insert({ "_id": req.body })
     });
 
 

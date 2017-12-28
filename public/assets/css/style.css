@@ -54,7 +54,6 @@ nav {
     border: none;
     font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
     font-size: 15px;
-    float: center;
 }
 
 #scrapeButton:hover {
@@ -62,7 +61,7 @@ nav {
 }
 
 #miniJumbotron {
-    font-size: 40px;
+    font-size: 100px;
     text-align: center;
     background: url("/assets/images/dust_scratches.png");
     width: 100%;
@@ -71,7 +70,7 @@ nav {
     /*margin-left: 40px;*/
     padding-top: 150px;
     opacity: .9;
-    font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+    font-family: "Nueva Std";
     position: relative;
 }
 
@@ -99,6 +98,7 @@ nav {
 .articleSum {
     font-family: "Georgia", Times, Times New Roman, serif;
     margin: 0;
+    margin-left: 3%;
     font-size: 15px;
     text-indent: 30px;
 }
@@ -122,8 +122,12 @@ a:link {
 }
 
 .cen {
-    /*float: right;*/
     text-align: center;
+}
+
+.savedCen {
+    text-align: center;
+    float: left;
 }
 
 /*modal*/
@@ -136,14 +140,41 @@ a:link {
 }
 
 .saveButton {
-    height: 30px;
-    width: 60px;
+    height: 40px;
+    width: 180px;
     border-radius: 10px;
     font-family: Verdana, Geneva, sans-serif;
+    font-size: 18px;
+    background: #2c98f0;
+    color: snow;
 }
 
-.saveButton {
-    background: #2c98f0;
+.saveButton:hover {
+    color: #0d151f;
+}
+
+.noteButton, .deleteButton, .editNoteButton {
+    height: 40px;
+    width: 180px;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 18px;
+    margin-left: 190%;
+    opacity: .9;
+    color: snow;
+}
+
+.noteButton {
+    background: #e4d374;
+    /*margin-right: 20%;*/
+}
+
+.deleteButton {
+    background: #e41c01;
+}
+
+.editNoteButton {
+    background: #4dc71f;
 }
 
 #block {
@@ -152,6 +183,31 @@ a:link {
     padding: 20px;
 }
 
+/*  Media Screens */
+@media screen and (max-width: 1000px) {
+    .noteButton, .deleteButton, .editNoteButton {
+        margin-left: 110%;
+    }
+}
 
+@media screen and (max-width: 768px) {
+    .noteButton, .deleteButton, .editNoteButton {
+        margin-left: 50%;
+    }
+}
+
+@media screen and (max-width: 481px) {
+    .noteButton, .deleteButton, .editNoteButton {
+        width: 100%;
+        margin: 0;
+    }
+
+    .noteButton, .editNoteButton {
+        margin-left: 30%;
+    }
+    .deleteButton {
+        margin-left: 25%;
+    }
+}
 
 

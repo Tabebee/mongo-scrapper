@@ -28,15 +28,19 @@ $.getJSON("/articles", function(data) {
                     + "<h3 class='articleHeader'>" + data[i].title +"</h3>" +
                     "<h5 class='articleSum'>" + data[i].sum +
                     "</h5> </a> " +
-                    "<div class='cen'> <button class='noteButton' data-id='"+ data[i]._id +"'> Add Notes </button> </div>" +
-                    "<div class='cen'> <button class='deleteButton' data-id='"+ data[i]._id +"'> Delete Article </button> </div> </div>"); //close big div
+                    "<div class='cen savedCen'> <button class='noteButton' data-id='"+ data[i]._id +"'> Add Notes </button> </div>" +
+                    "<div class='cen savedCen'> <button class='deleteButton' data-id='"+ data[i]._id +"'> Delete Article </button> </div> " +
+                    "<div class='cen savedCen'> <button class='editNoteButton' data-id='"+ data[i]._id +"'> View Notes </button> </div> " +
+                    "</div>"); //close big div
             } else {
                 $("#savedArticlesHere").append("<div class='fillMe'> <a target='_blank' href='" + data[i].link + "' data-id='" + data[i]._id + "'>"
                     +"<h3 class='articleHeader'>" + data[i].title +"</h3>" +
                     "<h5 class='noSum'>" + "No Summary Available" + "</h5>" +
                     "</a>" +
-                    "<div class='cen'> <button class='noteButton' data-id='"+ data[i]._id +"'> Add Notes </button> </div>" +
-                    "<div class='cen'> <button class='deleteButton' data-id='"+ data[i]._id +"'> Delete Article </button> </div> </div>"); //close big div
+                    "<div class='cen savedCen'> <button class='noteButton' data-id='"+ data[i]._id +"'> Add Notes </button> </div>" +
+                    "<div class='cen savedCen'> <button class='deleteButton' data-id='"+ data[i]._id +"'> Delete Article </button> </div> " +
+                    "<div class='cen savedCen'> <button class='editNoteButton' data-id='"+ data[i]._id +"'> View Notes </button> </div> " +
+                    "</div>"); //close big div
             }
         }
     }
@@ -91,7 +95,7 @@ $(document).on("click", ".deleteButton" ,function () {
     });
 }); //  close delete button
 
-//  toggle note modal on notebuuton click
+//  toggle note modal on note button click
 $(document).on("click", ".noteButton", function () {
     $(".modal").css("display", "block");
 });

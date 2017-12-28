@@ -37,17 +37,20 @@ app.set('view engine', 'handlebars');
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
-let MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoscrapper";
+let MONGODB_URI = process.env.MONGODB_URI; //|| "mongodb://localhost/mongoscrapper";
 
 mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI, {
-    useMongoClient: true
-});
 
-// mongoose.Promise = Promise;
-// mongoose.connect("mongodb://localhost/mongoscrapper", {
-//     useMongoClient: true
-// });
+if (MONGODB_URI) {
+    mongoose.connect(MONGODB_URI, {
+        useMongoClient: true
+    });
+} else {
+    mongoose.connect("mongodb://localhost/mongoscrapper", {
+        useMongoClient: true
+    });
+}
+
 
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
